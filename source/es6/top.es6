@@ -97,7 +97,7 @@ function searchRelatedVideoFromVideoId(videoId) {
   });
 }
 
-function addText() {
+function addIcon() {
   $("#output").append("<img src=\"" + channelIconUrl + "\">");
 
   $.cookie(cookieKeyName, $("#output").html(), {path: "/"});
