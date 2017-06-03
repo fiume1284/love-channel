@@ -3,8 +3,23 @@ var channelIconUrl;
 var cookieKeyName = "srtjs-channel-icons-output";
 
 $(function() {
-  var htmlFromCookie = $.cookie(cookieKeyName);
-  $("#output").html(htmlFromCookie);
+  var firebaseConfig = {
+    apiKey: "AIzaSyBV-Toqtl1kzXyY1roeQZoeLE3fBTg_3Yw",
+    authDomain: "youtube-view-counter-b55c2.firebaseapp.com",
+    databaseURL: "https://youtube-view-counter-b55c2.firebaseio.com",
+    projectId: "youtube-view-counter-b55c2",
+    storageBucket: "youtube-view-counter-b55c2.appspot.com",
+    messagingSenderId: "375316669656"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  var ref = firebase.database().ref("icons/1/html");
+  ref.on("value", function(snapshot) {
+    $("#output").html(snapshot.A.B);
+  });
+
+  // var htmlFromCookie = $.cookie(cookieKeyName);
+  // $("#output").html(htmlFromCookie);
 
   var videoId = getVideoIdFromUrl();
   var channelIconUrl = searchChannelIconFromVideoId(videoId);
@@ -61,8 +76,6 @@ function searchChannelIconFromChannelId(channelId) {
 function searchRelatedVideoFromVideoId(videoId) {
   const apiKey = "AIzaSyBV-Toqtl1kzXyY1roeQZoeLE3fBTg_3Yw";
 
-  console.log("xxx" + videoId);
-
   $.get("https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&relatedToVideoId=" + videoId + "&key=" + apiKey, function(data) {
     $("#next-video").html("");
 
@@ -88,6 +101,10 @@ function addText() {
   $("#output").append("<img src=\"" + channelIconUrl + "\">");
 
   $.cookie(cookieKeyName, $("#output").html(), {path: "/"});
+
+  firebase.database().ref("icons/" + "1").set({
+    html: $("#output").html()
+  });
 }
 
 function gotoNextVideo(videoId) {
@@ -101,6 +118,8 @@ function removeAllIcons() {
   if(confirm("本当に削除してよろしいですか？") === true) {
     $("#output").html("");
     deleteCookie();
+
+    firebase.database().ref("icons/" + "1").remove();
   }
 }
 
