@@ -1,0 +1,33 @@
+general:
+  branches:
+    ignore:
+      - gh-pages
+
+machine:
+  timezone: Asia/Tokyo
+  node:
+    version: v6.1.0
+
+dependencies:
+  pre:
+    - rm -rf node_modules
+  override:
+    - npm install
+
+test:
+  override:
+    - npm run test
+
+deployment:
+  deploy:
+    branch: master
+    commands:
+      - npm run gulp build
+      - rm -rf source
+      - mv -f optimized/. ./
+      - git config --global user.name  "CircleCI"
+      - git config --global user.email "circleci@gh-pages.com"
+      - git add .
+      - git commit -m "Publish gh-pages"
+      - git checkout -B gh-pages
+      - git push -u origin gh-pages --force

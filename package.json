@@ -4,7 +4,8 @@
   "description": "love-channel",
   "main": "top.js",
   "scripts": {
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "test": "echo 'dummy test'"
   },
   "repository": {
     "type": "git",
