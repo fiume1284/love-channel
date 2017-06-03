@@ -1,6 +1,5 @@
 var channelId;
 var channelIconUrl;
-var cookieKeyName = "srtjs-channel-icons-output";
 
 $(function() {
   var firebaseConfig = {
@@ -13,20 +12,15 @@ $(function() {
   };
   firebase.initializeApp(firebaseConfig);
 
-  var ref = firebase.database().ref("icons/1/html");
+  var ref = firebase.database().ref("channel_icons/html");
   ref.on("value", function(snapshot) {
     $("#output").html(snapshot.A.B);
   });
-
-  // var htmlFromCookie = $.cookie(cookieKeyName);
-  // $("#output").html(htmlFromCookie);
 
   var videoId = getVideoIdFromUrl();
   var channelIconUrl = searchChannelIconFromVideoId(videoId);
 
   searchRelatedVideoFromVideoId(videoId);
-
-  console.log("channelIconUrl = " + channelIconUrl);
 });
 
 /**
@@ -81,7 +75,6 @@ function searchRelatedVideoFromVideoId(videoId) {
 
     var items = data["items"];
     for(var i = 0; i < items.length; ++i) {
-      console.log(items[i]);
       var relatedVideoTitle = items[i]["snippet"]["title"];
       var relatedVideoId = items[i]["id"]["videoId"];
 
@@ -100,9 +93,7 @@ function searchRelatedVideoFromVideoId(videoId) {
 function addIcon() {
   $("#output").append("<img src=\"" + channelIconUrl + "\">");
 
-  $.cookie(cookieKeyName, $("#output").html(), {path: "/"});
-
-  firebase.database().ref("icons/" + "1").set({
+  firebase.database().ref("channel_icons").set({
     html: $("#output").html()
   });
 }
@@ -112,20 +103,12 @@ function gotoNextVideo(videoId) {
 }
 
 /**
- * 出力エリアのすべてのアイコンとクッキーを削除
+ * 出力エリアのすべてのアイコンとDBデータを削除
  */
 function removeAllIcons() {
   if(confirm("本当に削除してよろしいですか？") === true) {
     $("#output").html("");
-    deleteCookie();
 
-    firebase.database().ref("icons/" + "1").remove();
+    firebase.database().ref("channel_icons").remove();
   }
-}
-
-/**
- * クッキーの削除
- */
-function deleteCookie() {
-  $.removeCookie(cookieKeyName, {path: "/"});
 }
