@@ -45,3 +45,6 @@ gulp
 これで source フォルダ内のファイルの更新を監視して、更新があると  
 sass のコンパイルとか babel とか minify が走ってくれて、  
 optimized フォルダに書き出してくれる。すごい。
+
+ローカルサーバーが起動しているので、こちらにアクセス  
+[http://localhost:8014/?surl=5seconds.srt&autoplay=1&v=vzSH2eAvaV4](http://localhost:8014/?surl=5seconds.srt&autoplay=1&v=vzSH2eAvaV4)
