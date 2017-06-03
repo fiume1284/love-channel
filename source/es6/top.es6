@@ -82,7 +82,7 @@ function searchRelatedVideoFromVideoId(videoId) {
         '<row>\
           <div class="col-sm-12">\
             <a class="btn btn-primary" \
-            href="' + getCurrentUrlBase() + '/?surl=5seconds.srt&autoplay=1&v=' + relatedVideoId + '">' + relatedVideoTitle + '</a>\
+            href="' + getCurrentUrlBase() + '?surl=5seconds.srt&autoplay=1&v=' + relatedVideoId + '">' + relatedVideoTitle + '</a>\
           </div>\
         </row>'
       );
@@ -92,10 +92,10 @@ function searchRelatedVideoFromVideoId(videoId) {
 
 /**
  * 現在のページから、クエリ・ハッシュ部分を除いたURLを取得
+ * @return String http://a.com/xxx/ のような値が返る
  */
 function getCurrentUrlBase() {
-  var pathname = (location.pathname === "/") ? "" : location.pathname;
-  var baseUrl = location.protocol + "//" + location.host + pathname;
+  var baseUrl = location.protocol + "//" + location.host + location.pathname;
 
   return baseUrl;
 }
