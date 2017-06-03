@@ -69,8 +69,14 @@ function searchChannelIconFromChannelId(channelId) {
  */
 function searchRelatedVideoFromVideoId(videoId) {
   const apiKey = "AIzaSyBV-Toqtl1kzXyY1roeQZoeLE3fBTg_3Yw";
+  const maxResults = 12; // 検索ヒット数、APIのデフォルトは 5, 最大値は 50
 
-  $.get("https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&relatedToVideoId=" + videoId + "&key=" + apiKey, function(data) {
+  var requestUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video";
+  requestUrl += "&maxResults=" + maxResults;
+  requestUrl += "&relatedToVideoId=" + videoId;
+  requestUrl += "&key=" + apiKey;
+
+  $.get(requestUrl, function(data) {
     $("#next-video").html("");
 
     var items = data["items"];
