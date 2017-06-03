@@ -5,7 +5,16 @@
 **[srt.js ハッカソン](https://mashupawards.connpass.com/event/57500)** にて作成しました。  
 急いで作ったのでコード内にまずい箇所も散見されますが、「ハッカソンなので……」と優しい目で見てください。（悪用しないで……）
 
-動画の履歴は全ユーザーで共有されちゃってますので、数が増えてきたらあんまりお構いなく『履歴の削除』ボタンを押してください。
+再生チャンネルの履歴は全ユーザーで共有されちゃってますので、数が増えてきたらお構いなく『履歴の削除』ボタンを押しちゃってください。
+
+
+## Demo
+
+**[こちらから体験できます！](https://nekonenene.github.io/love-channel/?surl=5seconds.srt&autoplay=1&v=rQzgMmr8dH8)**  
+**https://nekonenene.github.io/love-channel/?surl=5seconds.srt&autoplay=1&v=rQzgMmr8dH8**
+
+なお、URLの `v=xxxxxxxx` となっている箇所の `v=` 以降を、  
+好きなYouTube動画の動画IDにすれば、お好みの動画でお楽しみいただけます。
 
 
 ## 開発するには……
