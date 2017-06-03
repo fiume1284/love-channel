@@ -9,16 +9,3 @@ $mincho: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMi
 .mincho {
 	font-family: $mincho;
 }
-
-/* 回り込み解除 */
-.clear {
-	clear      : both;
-	height     : 0;
-	font-size  : 1px;
-	line-height: 0;
-	visibility : hidden;
-}
-
-img {
-	border: 0;
-}

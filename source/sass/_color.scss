@@ -1,0 +1,28 @@
+$white      : #ffffff;
+$black      : #000000;
+$blue       : #1c50aa;
+$dark-blue  : #0a3754;
+$navy       : #2f2761;
+$green      : #1faa1c;
+$maccha     : #399003;
+$dark-green : #1d7737;
+$yellow     : #d98310;
+$dark-yellow: #613d0d;
+$passion-red: #ff0000;
+$red        : #bf3434;
+$dark-red   : #4b1717;
+$orange     : #ff6d1b;
+
+/*----- 以下、文字カラー指定用のCSS -----*/
+.red {
+	color: $passion-red;
+}
+.navy {
+	color: $navy;
+}
+.orange {
+	color: $orange;
+}
+.green {
+	color: $maccha;
+}

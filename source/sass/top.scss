@@ -1,14 +1,6 @@
-$blue       : #1c50aa;
-$dark-blue  : #0a3754;
-$green      : #1faa1c;
-$dark-green : #1d7737;
-$yellow     : #d98310;
-$dark-yellow: #613d0d;
-$red        : #bf3434;
-$dark-red   : #4b1717;
-
-@import "regular_design";
-
+@import "color";
+@import "font";
+@import "h_title";
 
 body {
 	margin          : 0;
@@ -49,13 +41,13 @@ p {
 	width           : auto;
 	margin          : 0;
 	padding         : 5px 15px 1px;
-	background-color: #2f2761;
-	color           : #ffffff;
+	background-color: $navy;
+	color           : $white;
 	text-align      : right;
 
 	a {
 		padding: 2px;
-		color  : #ffffff;
+		color  : $white;
 	}
 }
 
@@ -76,30 +68,4 @@ p {
 	font-size      : 82%;
 	text-align     : right;
 	text-decoration: underline;
-}
-
-// テキストの調整 small, big など
-@import "./h_title.scss";
-@import "./text_decoration.scss";
-
-// 色の設定
-@import "./colors.scss";
-
-
-#drop_zone {
-	padding: 25px;
-	border: 2px dashed #bbb;
-	border-radius: 5px;
-	text-align: center;
-	font: 20pt bold 'Vollkorn';
-	color: #bbb;
-}
-
-#drop_zone_sub {
-	padding: 25px;
-	border: 2px dashed #bbb;
-	border-radius: 5px;
-	text-align: center;
-	font: 20pt bold 'Vollkorn';
-	color: #bbb;
 }
