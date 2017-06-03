@@ -59,6 +59,10 @@ function addText() {
   $.cookie(cookieKeyName, $("#output").html(), {path: "/"});
 }
 
+function gotoNextVideo(videoId) {
+  location.href = "http://localhost:8014/?surl=5seconds.srt&autoplay=1&v=" + videoId;
+}
+
 /**
  * 出力エリアのすべてのアイコンとクッキーを削除
  */
