@@ -24,7 +24,8 @@ deployment:
     commands:
       - npm run gulp build
       - rm -rf source
-      - mv -f optimized/. ./
+      - cp -Rf optimized/. ./
+      - rm -rf optimized
       - git config --global user.name  "CircleCI"
       - git config --global user.email "circleci@gh-pages.com"
       - git add .
