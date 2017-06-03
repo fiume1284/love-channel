@@ -14,7 +14,7 @@ html(lang="ja")
     meta(name="theme-color" content="#2b0de8")
     link(rel="icon" href="./img/favicon_192.png" sizes="192x192")
 
-    - var title = "練習ページ";
+    - var title = "YouTube x srt.js";
     title #{title}
 
     // Normalize.css
@@ -48,7 +48,14 @@ html(lang="ja")
           .row
             .col-12
               p.pull-right
-                a.btn.btn-primary(href="http://localhost:8014/?surl=xxx.srt.js&autoplay=1&v=gEiGQ30JK5M") 何もないボタン
+                a.btn.btn-primary(href="http://localhost:8014/?surl=xxx.srt.js&autoplay=1&v=Ht9ndA6A-Pc") 次の動画
+          .row
+            .col-12
+              #output
+          .row
+            .col-12
+              p.pull-right
+                button.btn.btn-danger(type="button" onclick="removeAllIcons()") アイコンと履歴の削除
 
       #footer
         a(href="http://hato-neko.x0.com" target="_blank" title="ハトネコエセンター").
@@ -64,6 +71,9 @@ html(lang="ja")
     //- CDN 上になければローカルから読み込み
     script.
       window.jquery || document.write('<script src="./plugins/jquery.min.js"><\/script>')
+
+    // jquery-cookie
+    script(src="plugins/jquery.cookie.min.js")
 
     // Tether
     script(

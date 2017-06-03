@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="./img/favicon.ico">
     <meta name="theme-color" content="#2b0de8">
     <link rel="icon" href="./img/favicon_192.png" sizes="192x192">
-    <title>練習ページ</title>
+    <title>YouTube x srt.js</title>
     <!-- Normalize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <!-- Font Awesome!-->
@@ -24,7 +24,7 @@
   <body>
     <div id="site-box">
       <div id="site-main">
-        <h3>練習ページ</h3>
+        <h3>YouTube x srt.js</h3>
         <div id="content">
           <div class="row">
             <div class="col-12">
@@ -40,7 +40,19 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <p class="pull-right"><a class="btn btn-primary" href="http://localhost:8014/?surl=xxx.srt.js&amp;autoplay=1&amp;v=gEiGQ30JK5M">何もないボタン</a></p>
+              <p class="pull-right"><a class="btn btn-primary" href="http://localhost:8014/?surl=xxx.srt.js&amp;autoplay=1&amp;v=Ht9ndA6A-Pc">次の動画</a></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div id="output"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p class="pull-right">
+                <button class="btn btn-danger" type="button" onclick="removeAllIcons()">アイコンと履歴の削除</button>
+              </p>
             </div>
           </div>
         </div>
@@ -55,6 +67,8 @@
       window.jquery || document.write('<script src="./plugins/jquery.min.js"><\/script>')
       
     </script>
+    <!-- jquery-cookie-->
+    <script src="plugins/jquery.cookie.min.js"></script>
     <!-- Tether-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <!-- Bootstrap-->
