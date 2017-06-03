@@ -78,11 +78,14 @@ function searchRelatedVideoFromVideoId(videoId) {
       var relatedVideoTitle = items[i]["snippet"]["title"];
       var relatedVideoId = items[i]["id"]["videoId"];
 
+      var pathname = (location.pathname === "/") ? "" : location.pathname;
+      var baseUrl = location.protocol + "//" + location.host + pathname;
+
       $("#next-video").append(
         '<row>\
           <div class="col-sm-12">\
             <a class="btn btn-primary" \
-            href="http://localhost:8014/?surl=5seconds.srt&autoplay=1&v=' + relatedVideoId + '">' + relatedVideoTitle + '</a>\
+            href="' + baseUrl + '/?surl=5seconds.srt&autoplay=1&v=' + relatedVideoId + '">' + relatedVideoTitle + '</a>\
           </div>\
         </row>'
       );
@@ -96,10 +99,6 @@ function addIcon() {
   firebase.database().ref("channel_icons").set({
     html: $("#output").html()
   });
-}
-
-function gotoNextVideo(videoId) {
-  location.href = "http://localhost:8014/?surl=5seconds.srt&autoplay=1&v=" + videoId;
 }
 
 /**
