@@ -32,7 +32,7 @@ html(lang="ja")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css")
 
     //- My Stylesheets
-    link(rel="stylesheet" href="./top.css")
+    link(rel="stylesheet" href="top.css")
   body
     #site-box
       #site-main
@@ -40,16 +40,15 @@ html(lang="ja")
         #content
           .row
             .col-12
-              p
-                button.btn.btn-primary(type="button") あお
-                button.btn.btn-success(type="button") みどり
-                button.btn.btn-warning(type="button") きいろ
-                button.btn.btn-danger(type="button") あか
-
+              #player
           .row
             .col-12
-              p
-                .output
+              #drop_zone_sub
+                Drop srt.js file here
+          .row
+            .col-12
+              p.pull-right
+                a.btn.btn-primary(href="http://localhost:8014/?surl=xxx.srt.js&autoplay=1&v=gEiGQ30JK5M") 何もないボタン
 
       #footer
         a(href="http://hato-neko.x0.com" target="_blank" title="ハトネコエセンター").
@@ -83,4 +82,6 @@ html(lang="ja")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/js/mdb.min.js")
 
     //- My Scripts
-    script(src="./top.js")
+    script(src="plugins/subtitle.js")
+    script(src="plugins/srt.js")
+    script(src="top.js")
