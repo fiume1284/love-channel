@@ -62,10 +62,20 @@ p {
 	}
 }
 
-.caution {
-	margin-top     : 10px;
-	color          : #7c061a;
-	font-size      : 82%;
-	text-align     : right;
-	text-decoration: underline;
+#drop_zone {
+	padding: 25px;
+	border: 2px dashed #bbb;
+	border-radius: 5px;
+	text-align: center;
+	font: 20pt bold 'Vollkorn';
+	color: #bbb;
+}
+
+#drop_zone_sub {
+	padding: 25px;
+	border: 2px dashed #bbb;
+	border-radius: 5px;
+	text-align: center;
+	font: 20pt bold 'Vollkorn';
+	color: #bbb;
 }
