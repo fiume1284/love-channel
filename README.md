@@ -1,4 +1,7 @@
-# titletitle
+# love-channel
+
+動画を再生している時間が長いほど、アイコンが貯まっていきます。
+
 
 ## 開発するには……
 
@@ -6,7 +9,7 @@
 
 以下のようにコマンド
 ```
-git clone git@github.com:nekonenene/titletitle.git
+git clone git@github.com:nekonenene/love-channel.git
 ```
 
 ### 2. Ruby, Node.js をインストール
@@ -46,5 +49,5 @@ gulp
 sass のコンパイルとか babel とか minify が走ってくれて、  
 optimized フォルダに書き出してくれる。すごい。
 
-ローカルサーバーが起動しているので、こちらにアクセス  
+gulp コマンドによりローカルサーバーが起動したあとは、こちらにアクセス  
 [http://localhost:8014/?surl=5seconds.srt&autoplay=1&v=vzSH2eAvaV4](http://localhost:8014/?surl=5seconds.srt&autoplay=1&v=vzSH2eAvaV4)

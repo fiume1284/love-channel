@@ -1,18 +1,18 @@
 {
-  "name": "titletitle",
-  "version": "0.0.1",
-  "description": "titletitle",
+  "name": "love-channel",
+  "version": "1.0.0",
+  "description": "love-channel",
   "main": "top.js",
   "scripts": {
     "gulp": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:nekonenene/titletitle.git"
+    "url": "git@github.com:nekonenene/love-channel.git"
   },
   "keywords": [
     "nekonenene",
-    "template"
+    "srt.js"
   ],
   "author": "ハトネコエ <hato.nekoe@gmail.com>",
   "license": "MIT",
