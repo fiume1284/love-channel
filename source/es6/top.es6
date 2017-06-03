@@ -9,6 +9,8 @@ $(function() {
   var videoId = getVideoIdFromUrl();
   var channelIconUrl = searchChannelIconFromVideoId(videoId);
 
+  searchRelatedVideoFromVideoId(videoId);
+
   console.log("channelIconUrl = " + channelIconUrl);
 });
 
@@ -50,6 +52,33 @@ function searchChannelIconFromChannelId(channelId) {
     console.log("channelIconUrl = " + channelIconUrl);
 
     return channelIconUrl;
+  });
+}
+
+/**
+ * 関連動画を検索し、ランダムにひとつ動画IDを返す
+ */
+function searchRelatedVideoFromVideoId(videoId) {
+  const apiKey = "AIzaSyBV-Toqtl1kzXyY1roeQZoeLE3fBTg_3Yw";
+
+  $.get("https://www.googleapis.com/youtube/v3/search?part=snippet&type=snippet&relatedToVideoId" + videoId + "&key=" + apiKey, function(data) {
+    $("#next-video").html("");
+
+    var items = data["items"];
+    for(var i = 0; i < items.length; ++i) {
+      console.log(items[i]);
+      var relatedVideoTitle = items[i]["snippet"]["title"];
+      var relatedVideoId = items[i]["id"]["videoId"];
+
+      $("#next-video").append(
+        '<row>\
+          <div class="col-sm-12">\
+            <a class="btn btn-primary" \
+            href="http://localhost:8014/?surl=5seconds.srt&autoplay=1&v=' + relatedVideoId + '">' + relatedVideoTitle + '</a>\
+          </div>\
+        </row>'
+      );
+    }
   });
 }
 

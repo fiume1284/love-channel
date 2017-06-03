@@ -41,21 +41,22 @@ html(lang="ja")
           .row
             .col-12
               #player
-          .row
+          .row.mb-1
             .col-12
               #drop_zone_sub
                 Drop srt.js file here
           .row
             .col-12
-              p.pull-right
-                button.btn.btn-primary(type="button" onclick="gotoNextVideo(\"Ht9ndA6A-Pc\")") 次の動画
-          .row
-            .col-12
               #output
-          .row
+          .row.mb-2
             .col-12
               p.pull-right
-                button.btn.btn-danger(type="button" onclick="removeAllIcons()") アイコンと履歴の削除
+                button.btn.btn-danger(type="button" onclick="removeAllIcons()") アイコンの削除
+          .card
+            .card-block
+              .card-title 関連動画
+              .card-text
+                #next-video
 
       #footer
         a(href="http://hato-neko.x0.com" target="_blank" title="ハトネコエセンター").
