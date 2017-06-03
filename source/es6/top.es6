@@ -78,14 +78,11 @@ function searchRelatedVideoFromVideoId(videoId) {
       var relatedVideoTitle = items[i]["snippet"]["title"];
       var relatedVideoId = items[i]["id"]["videoId"];
 
-      var pathname = (location.pathname === "/") ? "" : location.pathname;
-      var baseUrl = location.protocol + "//" + location.host + pathname;
-
       $("#next-video").append(
         '<row>\
           <div class="col-sm-12">\
             <a class="btn btn-primary" \
-            href="' + baseUrl + '/?surl=5seconds.srt&autoplay=1&v=' + relatedVideoId + '">' + relatedVideoTitle + '</a>\
+            href="' + getCurrentUrlBase() + '/?surl=5seconds.srt&autoplay=1&v=' + relatedVideoId + '">' + relatedVideoTitle + '</a>\
           </div>\
         </row>'
       );
@@ -93,6 +90,19 @@ function searchRelatedVideoFromVideoId(videoId) {
   });
 }
 
+/**
+ * 現在のページから、クエリ・ハッシュ部分を除いたURLを取得
+ */
+function getCurrentUrlBase() {
+  var pathname = (location.pathname === "/") ? "" : location.pathname;
+  var baseUrl = location.protocol + "//" + location.host + pathname;
+
+  return baseUrl;
+}
+
+/**
+ * 出力部分に、動画のチャンネルアイコンを足す。データベース側も更新
+ */
 function addIcon() {
   $("#output").append("<img src=\"" + channelIconUrl + "\">");
 
