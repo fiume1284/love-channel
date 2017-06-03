@@ -65,7 +65,7 @@ function searchChannelIconFromChannelId(channelId) {
 }
 
 /**
- * 関連動画を検索し、ランダムにひとつ動画IDを返す
+ * 関連動画を検索し、その一覧をページに出力
  */
 function searchRelatedVideoFromVideoId(videoId) {
   const apiKey = "AIzaSyBV-Toqtl1kzXyY1roeQZoeLE3fBTg_3Yw";
