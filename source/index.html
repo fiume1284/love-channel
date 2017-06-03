@@ -15,32 +15,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <!-- Font Awesome!-->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- jQuery-->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script>
-      window.jquery || document.write('<script src="./plugins/jquery.min.js"><\/script>')
-      
-    </script>
-    <link rel="stylesheet" href="./top.css">
-    <script src="./top.js"></script>
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- Material Design for Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css">
+    <link rel="stylesheet" href="top.css">
   </head>
   <body>
     <div id="site-box">
       <div id="site-main">
         <h3>練習ページ</h3>
         <div id="content">
-          <p>
-            <button class="blue-button" type="button">あお</button>
-            <button class="green-button" type="button">みどり</button>
-            <button class="yellow-button" type="button">きいろ</button>
-            <button class="red-button" type="button">あか</button>
-          </p>
-          <p>
-            <div class="output"></div>
-          </p>
+          <div class="row">
+            <div class="col-12">
+              <div id="player"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div id="drop_zone_sub">
+                <Drop>srt.js file here</Drop>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p class="pull-right"><a class="btn btn-primary" href="http://localhost:8014/?surl=xxx.srt.js&amp;autoplay=1&amp;v=gEiGQ30JK5M">何もないボタン</a></p>
+            </div>
+          </div>
         </div>
       </div>
-      <div id="footer"><a href="http://hato-neko.x0.com" target="_blank" title="ハトネコエセンター">ハトネコエ</a></div>
+      <div id="footer"><a href="http://hato-neko.x0.com" target="_blank" title="ハトネコエセンター">
+          ハトネコエ
+          </a></div>
     </div>
+    <!-- jQuery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+      window.jquery || document.write('<script src="./plugins/jquery.min.js"><\/script>')
+      
+    </script>
+    <!-- Tether-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <!-- Bootstrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!-- Material Design for Bootstrap-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/js/mdb.min.js"></script>
+    <script src="plugins/subtitle.js"></script>
+    <script src="plugins/srt.js"></script>
+    <script src="top.js"></script>
   </body>
 </html>
