@@ -61,7 +61,9 @@ function searchChannelIconFromChannelId(channelId) {
 function searchRelatedVideoFromVideoId(videoId) {
   const apiKey = "AIzaSyBV-Toqtl1kzXyY1roeQZoeLE3fBTg_3Yw";
 
-  $.get("https://www.googleapis.com/youtube/v3/search?part=snippet&type=snippet&relatedToVideoId" + videoId + "&key=" + apiKey, function(data) {
+  console.log("xxx" + videoId);
+
+  $.get("https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&relatedToVideoId=" + videoId + "&key=" + apiKey, function(data) {
     $("#next-video").html("");
 
     var items = data["items"];
