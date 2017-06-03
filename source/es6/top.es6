@@ -69,7 +69,7 @@ function searchChannelIconFromChannelId(channelId) {
  */
 function searchRelatedVideoFromVideoId(videoId) {
   const apiKey = "AIzaSyBV-Toqtl1kzXyY1roeQZoeLE3fBTg_3Yw";
-  const maxResults = 12; // 検索ヒット数、APIのデフォルトは 5, 最大値は 50
+  const maxResults = 24; // 検索ヒット数、APIのデフォルトは 5, 最大値は 50
 
   var requestUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video";
   requestUrl += "&maxResults=" + maxResults;
@@ -83,11 +83,18 @@ function searchRelatedVideoFromVideoId(videoId) {
     for(var i = 0; i < items.length; ++i) {
       var relatedVideoTitle = items[i]["snippet"]["title"];
       var relatedVideoId = items[i]["id"]["videoId"];
+      var relatedVideoChannelId = items[i]["snippet"]["channelId"];
+
+      // 関連動画で違うチャンネルIDのものはわかりやすいように色を変える
+      var buttonStyle = "btn-primary";
+      if (channelId !== undefined && channelId !== relatedVideoChannelId) {
+        buttonStyle = "btn-warning";
+      }
 
       $("#next-video").append(
         '<row>\
           <div class="col-sm-12">\
-            <a class="btn btn-primary" \
+            <a class="btn ' + buttonStyle + '" \
             href="' + getCurrentUrlBase() + '?surl=5seconds.srt&autoplay=1&v=' + relatedVideoId + '">' + relatedVideoTitle + '</a>\
           </div>\
         </row>'
