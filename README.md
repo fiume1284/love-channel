@@ -63,5 +63,6 @@ gulp
 sass のコンパイルとか babel とか minify が走ってくれて、  
 optimized フォルダに書き出してくれる。すごい。
 
-gulp コマンドによりローカルサーバーが起動したあとは、こちらにアクセス  
-[http://localhost:8014/?surl=5seconds.srt&autoplay=1&v=vzSH2eAvaV4](http://localhost:8014/?surl=5seconds.srt&autoplay=1&v=vzSH2eAvaV4)
+gulp コマンドによりローカルサーバーが起動されたあとは、こちらにアクセス  
+開発環境 : [http://localhost:8013/?surl=5seconds.srt&autoplay=1&v=vzSH2eAvaV4](http://localhost:8013/?surl=5seconds.srt&autoplay=1&v=vzSH2eAvaV4)  
+リリース環境 : [http://localhost:8014/?surl=5seconds.srt&autoplay=1&v=vzSH2eAvaV4](http://localhost:8014/?surl=5seconds.srt&autoplay=1&v=vzSH2eAvaV4)
