@@ -147,9 +147,15 @@ gulp.task('codeMinify', ['jsMinify', 'cssMinify', 'htmlMinify']);
 
 /* JavaScript Min */
 gulp.task('jsMinify', function(callback) {
+  var uglifyOptions = {
+    compress: {
+      drop_console: true, // console出力を無くす
+    },
+  };
+
   pump([
     gulp.src('./source/**/*.js'),
-    uglify(),
+    uglify(uglifyOptions),
     gulp.dest('./optimized/'),
     connect.reload(),
   ], callback);
