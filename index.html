@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang=ja>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="">
+<meta name=keywords content="">
+<meta name=author content=nekonenene>
+<link rel="shortcut icon"href=./img/favicon.ico>
+<meta name=theme-color content=#2b0de8>
+<link rel=icon href=./img/favicon_192.png sizes=192x192>
+<title>YouTube x srt.js</title>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css>
+<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css integrity=sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css>
+<link rel=stylesheet href=top.css>
+</head>
+<body>
+<div id=site-box>
+<div id=site-main>
+<h3>YouTube x srt.js</h3>
+<div id=content>
+<div class=row>
+<div class="col-12 text-center">
+<div id=player></div>
+</div>
+</div>
+<div class="row mb-1">
+<div class=col-12>
+<div id=drop_zone_sub>
+<drop>srt.js file here</drop>
+</div>
+</div>
+</div>
+<div class=row>
+<div class=col-12>
+<div id=output></div>
+</div>
+</div>
+<div class="row mb-2">
+<div class=col-12>
+<p class=pull-right>
+<button class="btn btn-danger"type=button onclick=removeAllIcons()>履歴の削除</button>
+</p>
+</div>
+</div>
+<div class=card>
+<div class=card-block>
+<div class=card-title>関連動画</div>
+<div class=card-text>
+<div id=next-video></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id=footer><a href=http://hato-neko.x0.com target=_blank title=ハトネコエセンター>
+ハトネコエ
+</a></div>
+</div>
+<script src=https://code.jquery.com/jquery-3.2.1.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin=anonymous></script>
+<script>
+window.jquery || document.write('<script src="./plugins/jquery.min.js"><\/script>')
+</script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js integrity=sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb crossorigin=anonymous></script>
+<script src=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js integrity=sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/js/mdb.min.js></script>
+<script src=https://www.gstatic.com/firebasejs/3.6.2/firebase.js></script>
+<script src=plugins/subtitle.js></script>
+<script src=plugins/srt.js></script>
+<script src=top.js></script>
+</body>
+</html>
